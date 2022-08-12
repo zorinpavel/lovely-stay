@@ -1,0 +1,239 @@
+%input {
+    font-family: inherit;
+    font-size: inherit;
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: top;
+    line-height: $line-height;
+    @include margin(0, 2);
+
+    .wrapper {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid $color-input-border;
+        border-radius: $border-radius;
+        width: 100%;
+        background-color: $color-input-background;
+
+        &:hover:not(.wrapper--disabled):not(.wrapper--error),
+        &.focus:not(.wrapper--disabled):not(.wrapper--error) {
+            border-color: $color-input-focus;
+        }
+
+        &:active:not(.wrapper--disabled):not(.wrapper--error),
+        &:focus:not(.wrapper--disabled):not(.wrapper--error) {
+            border-color: $color-input-focus;
+        }
+
+        &.wrapper--disabled {
+            background-color: $color-input-disabled;
+
+            & * {
+                cursor: not-allowed;
+            }
+        }
+
+        &.wrapper--readonly {
+            background-color: $color-input;
+        }
+
+        .icon__left {
+            flex-shrink: 0;
+            color: $color-input-focus;
+            @include margin(0, 0, 0, 3);
+        }
+
+        .icon__right {
+            flex-shrink: 0;
+            color: $color-input-focus;
+            @include margin(0, 3, 0, 0);
+        }
+
+        &.wrapper--addon__left {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &.wrapper--addon__right {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        INPUT {
+            font-family: inherit;
+            font-size: inherit;
+            color: $color-input-focus;
+            background-color: $color-input-background;
+            box-shadow: none;
+            outline: none;
+            border: 0 none;
+            border-radius: $border-radius;
+            width: 100%;
+            line-height: $line-height;
+            box-sizing: content-box;
+
+            @include padding(2, 3);
+
+            &::placeholder {
+                color: $color-input;
+            }
+
+            &[disabled] {
+                color: $color-input-disabled;
+                background-color: $color-input-background;
+            }
+
+            &[readonly] {
+                background-color: $color-input-background;
+            }
+
+            //&:invalid {
+            //    border: 1px solid var(--color-input__border--error);
+            //}
+        }
+    }
+
+    .addon--wrapper {
+        display: inline-flex;
+        align-items: center;
+
+        .addon {
+            font-size: $font-size-base;
+            background-color: $color-addon-background;
+            color: $color-base;
+            border: 1px solid $color-input-border;
+            @include padding(2, 3);
+
+            &.left {
+                border-radius: $border-radius 0 0 $border-radius;
+                border-right: 0 none;
+            }
+
+            &.right {
+                border-radius: 0 $border-radius $border-radius 0;
+                border-left: 0 none;
+            }
+        }
+    }
+
+    &.error {
+        .wrapper {
+            border: 1px solid $color-input-error-border;
+
+            .icon__left,
+            .icon__right {
+                cursor: default;
+                color: $color-input-error;
+            }
+        }
+    }
+
+    &.disabled {
+        .wrapper {
+            .icon__left,
+            .icon__right {
+                cursor: not-allowed;
+                color: $color-input-disabled;
+            }
+        }
+    }
+
+    &.readonly {
+        .wrapper {
+            .icon__left,
+            .icon__right {
+                cursor: default;
+                color: $color-input-disabled;
+            }
+        }
+    }
+
+    .label {
+        color: $color-base;
+        min-height: $line-height * 1em;
+        @include marginBottom(1);
+
+        .mark {
+            color: $color-input-error;
+            @include marginRight(1);
+        }
+    }
+
+    .error {
+        font-size: $font-size-base;
+        color: $color-input-error;
+        line-height: 1.2;
+        min-height: 1.2em;
+
+        @include marginTop(1);
+    }
+}
+
+
+.text {
+    @extend %input;
+}
+
+
+.email {
+    @extend %input;
+}
+
+
+.password {
+    @extend %input;
+}
+
+
+.number {
+    @extend %input;
+}
+
+
+.tel {
+    @extend %input;
+}
+
+
+.url {
+    @extend %input;
+}
+
+
+.search {
+    @extend %input;
+}
+
+.date {
+    @extend %input;
+    position: relative;
+
+    .wrapper {
+        INPUT {
+            background-color: transparent;
+            cursor: pointer;
+            flex-grow: 1;
+            // тип поля date почему-то выше чем обычный input
+            height: 1.173rem;
+            min-width: 6rem;
+        }
+
+        .icon__right {
+            cursor: pointer;
+        }
+    }
+
+    & ::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        display: block;
+        -webkit-appearance: initial;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        color: transparent;
+        background: transparent none;
+    }
+}

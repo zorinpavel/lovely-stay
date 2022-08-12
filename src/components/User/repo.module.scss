@@ -1,0 +1,27 @@
+.repo {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    @include padding(4, 4);
+    flex-basis: 48%;
+    min-height: 8rem;
+    display: flex;
+    flex-direction: column;
+
+    .repo__url {
+        color: $color-link-base;
+        text-decoration: none;
+    }
+
+    .repo__description {
+        @include margin(2, 0);
+    }
+
+    .repo__prop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-base-light;
+        margin-top: auto;
+    }
+}

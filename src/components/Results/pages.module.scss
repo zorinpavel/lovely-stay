@@ -1,0 +1,25 @@
+.pages {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    @include marginTop(8);
+    width: 80%;
+
+    .page {
+        cursor: pointer;
+        display: block;
+        @include padding(2, 4);
+        color: $color-link-base;
+        text-decoration: none;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+
+        &:hover {
+            background-color: $violet-1;
+        }
+
+        &.current {
+            background-color: $violet-2;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.container {
+    @include margin(20, 0);
+
+    .status {
+        color: $color-input-error;
+    }
+
+    .message {
+        @include marginTop(4);
+        color: $magenta-4;
+    }
+}

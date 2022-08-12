@@ -1,0 +1,52 @@
+.icon {
+    color: inherit;
+    font-size: inherit;
+    fill: currentColor;
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    box-sizing: content-box;
+    vertical-align: middle;
+
+    &.small {
+        width: 0.8em;
+        height: 0.8em;
+    }
+
+    &.medium {
+        width: 1em;
+        height: 1em;
+    }
+
+    &.default {
+
+    }
+
+    &.large {
+        width: 1.4em;
+        height: 1.4em;
+    }
+
+    &.disabled {
+        color: $color-input-disabled;
+        cursor: not-allowed;
+    }
+
+    .badge {
+        color: #D9A54C;
+        stroke: #FFFFFF;
+    }
+
+    &.action {
+        @include padding(2, 2);
+
+        &:not(.disabled) {
+            cursor: pointer;
+            border-radius: $border-radius;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.03);
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.row {
+    @include padding(4, 4);
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .login {
+        font-size: 180%;
+        color: $color-link-base;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .avatar {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+}

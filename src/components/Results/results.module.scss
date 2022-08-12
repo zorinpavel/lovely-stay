@@ -1,0 +1,10 @@
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 80%;
+    @include marginTop(6);
+}
+
+.total-count {
+}

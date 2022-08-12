@@ -1,0 +1,26 @@
+.wrapper {
+    width: 80%;
+    @include marginTop(6);
+}
+
+.wrapper__data {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .card {
+        .avatar {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+        }
+    }
+
+    .repos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        flex-basis: 70%;
+        justify-content: space-between;
+    }
+}

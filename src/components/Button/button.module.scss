@@ -1,0 +1,68 @@
+%button {
+    font-size: inherit;
+    border: 1px solid $color-input-border;
+    border-radius: $border-radius;
+    cursor: pointer;
+    line-height: $line-height;
+
+    @include padding(2, 6);
+    @include margin(0, 2);
+
+    &.icon {
+        // только иконка без label
+        @include padding(2, 3.2);
+    }
+
+    &.with-icon {
+        display: inline-flex;
+        vertical-align: middle;
+        align-items: center;
+    }
+
+    .icon--left {
+        vertical-align: middle;
+        @include marginRight(2);
+    }
+
+    .icon--right {
+        vertical-align: middle;
+        @include marginLeft(2);
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        text-decoration: none;
+    }
+}
+
+.default {
+    @extend %button;
+
+    color: $color-button;
+    background-color: $color-button-background;
+
+    &:hover:not([disabled]),
+    &:active:not([disabled]) {
+        background-color: darken($color-button-background, 10%);
+    }
+
+    &[disabled] {
+        color: lighten($color-button, 10%);
+        background-color: lighten($color-button, 10%);
+        border-color: transparent;
+    }
+}
+
+.text {
+    @extend %button;
+
+    color: $color-button;
+    background-color: transparent;
+    border-color: transparent;
+    @include margin(0, 0);
+
+    &:hover:not([disabled]),
+    &:active:not([disabled]) {
+        background-color: transparent;
+    }
+}
