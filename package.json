@@ -49,6 +49,7 @@
     "@craco/craco": "^3.6.0",
     "craco-sass-resources-loader": "^1.1.0",
     "eslint": "^8.21.0",
+    "react-test-renderer": "^18.2.0",
     "sass": "^1.54.3"
   }
 }

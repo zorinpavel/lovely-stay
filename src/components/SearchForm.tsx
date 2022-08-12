@@ -48,7 +48,7 @@ export const SearchForm = () => {
 
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-            <form onSubmit={handleForm} >
+            <form onSubmit={handleForm} data-testid="search-form">
                 <Input
                     placeholder="Type GitHub login"
                     type="search"
@@ -56,8 +56,9 @@ export const SearchForm = () => {
                     addonLeft={{ label: '@' }}
                     style={{ minWidth: '25rem' }}
                     iconRight={<IconSearch />}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchString(event.target.value)} />
-                <Button type="submit">Search</Button>
+                    onChange={(event: ChangeEvent<HTMLInputElement>) => setSearchString(event.target.value)}
+                    dataTestId="search-input" />
+                <Button type="submit" dataTestId="search-button">Search</Button>
             </form>
         </div>
     );

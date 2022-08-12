@@ -26,7 +26,6 @@ export const getRepos = (login?: string) => (dispatch: AppDispatch) => {
 
     API.get(settings.API_PATH + '/users/' + login + '/repos')
         .then((response) => {
-            console.log(response.data);
             dispatch(setRepos(response.data));
         })
         .catch(error => {

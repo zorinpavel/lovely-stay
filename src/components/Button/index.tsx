@@ -27,6 +27,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     onClick?: MouseEventHandler<HTMLButtonElement>,
     iconLeft?: ReactElement,
     iconRight?: ReactElement,
+    dataTestId?: string,
 }
 
 
@@ -36,6 +37,7 @@ export const Button = (props: Props) => {
         onClick,
         iconLeft, iconRight,
         className, style,
+        dataTestId
     } = props;
 
 
@@ -51,7 +53,8 @@ export const Button = (props: Props) => {
             )}
             disabled={disabled}
             onClick={onClick}
-            style={style}>
+            style={style}
+            data-testid={dataTestId}>
             {iconLeft && React.cloneElement(iconLeft, { className: css.iconLeft })}
             {label || props.children}
             {iconRight && React.cloneElement(iconRight, { className: css.iconRight })}

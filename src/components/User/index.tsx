@@ -47,7 +47,7 @@ export const User = () => {
             <div className={css.wrapperData}>
                 <div className={css.card}>
                     <img className={css.avatar} src={user?.avatar_url} alt="avatar" />
-                    <h1>{user?.login}</h1>
+                    <h1  data-testid="user-login">{user?.login}</h1>
                     <h3>{user?.name}</h3>
                     <div>{user?.email}</div>
                     <div>Public repos: {user?.public_repos ?? 0}</div>

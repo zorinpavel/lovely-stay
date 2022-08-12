@@ -24,6 +24,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
     iconRight?: ReactElement,
     addonLeft?: { [label: string]: string },
     addonRight?: { [label: string]: string },
+    dataTestId?: string,
 }
 
 
@@ -35,6 +36,7 @@ export const Input = (props: Props) => {
         iconLeft, iconRight,
         addonLeft, addonRight,
         className, style,
+        dataTestId
     } = props;
     const [currentValue, setValue] = useState(value);
     const [focus, setFocus] = useState(false);
@@ -138,6 +140,7 @@ export const Input = (props: Props) => {
                         onFocus={handleFocus}
                         onBlur={handleBlur}
                         onInput={handleInput}
+                        data-testid={dataTestId}
                     />
                     {
                         iconRight &&
